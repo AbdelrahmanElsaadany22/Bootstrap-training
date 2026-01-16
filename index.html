@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegance Shop</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+  --main:#2c3e50;
+  --accent:#e74c3c;
+}
+
+body{
+  font-family:'Segoe UI',Tahoma;
+  scroll-behavior:smooth;
+}
+
+.custom-nav{
+  background:transparent;
+  padding:18px 0;
+  transition:all .4s ease;
+}
+.custom-nav.scrolled{
+  background:var(--main);
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  padding:10px 0;
+}
+.logo{
+  font-weight:700;
+  transition:.3s;
+}
+.logo:hover{
+  transform:scale(1.1);
+}
+.nav-link{
+  position:relative;
+  margin-left:15px;
+  transition:.3s;
+}
+.nav-link::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
+.nav-link:hover::after{
+  width:100%;
+}
+.nav-link:hover{
+  color:var(--accent)!important;
+}
+
+.hero{
+  min-height:100vh;
+  background:url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+.hero-content{
+  position:relative;
+  z-index:1;
+  color:#fff;
+  animation:fadeDown 1.2s ease;
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{
+  animation:fadeUp 1s ease both;
+}
+.zoom{
+  transition:.4s;
+}
+.zoom:hover{
+  transform:scale(1.08);
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+.section-title h2{
+  font-weight:700;
+}
+
+.category-card{
+  height:260px;
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+}
+.category-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:26px;
+  font-weight:bold;
+}
+
+.product-card{
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  transition:.4s;
+}
+.product-card:hover{
+  transform:translateY(-10px);
+}
+.product-img{
+  height:260px;
+  object-fit:cover;
+}
+.price{
+  color:var(--accent);
+  font-weight:700;
+}
+
+.sale{
+  background:url("https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  color:#fff;
+  position:relative;
+}
+.sale::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+.sale-content{
+  position:relative;
+  z-index:1;
+}
+
+.brand img{
+  max-height:60px;
+  opacity:.7;
+  transition:.3s;
+}
+.brand img:hover{
+  opacity:1;
+  transform:scale(1.1);
+}
+
+footer{
+  background:var(--main);
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+<div class="container">
+<a class="navbar-brand logo" href="#"><i class="fas fa-bag-shopping"></i> Elegance</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="mainNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+<li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="#sale">Sale</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<section id="home" class="hero d-flex align-items-center text-center">
+<div class="container hero-content">
+<h1 class="display-4 fw-bold">New Fashion Collection</h1>
+<p class="lead mb-4">Discover trends – Shop smart</p>
+<button class="btn btn-danger btn-lg px-5">Shop Now</button>
+</div>
+</section>
+
+<section id="categories" class="py-5">
+<div class="container">
+<div class="section-title fade-up"><h2>Categories</h2></div>
+
+<div class="row g-4">
+<div class="col-md-4 fade-up">
+<div class="category-card zoom" style="background:url('https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=800&q=80') center/cover">
+<div class="category-overlay">Women</div>
+</div>
+</div>
+
+<div class="col-md-4 fade-up">
+<div class="category-card zoom" style="background:url('https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80') center/cover">
+<div class="category-overlay">Men</div>
+</div>
+</div>
+
+<div class="col-md-4 fade-up">
+<div class="category-card zoom" style="background:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80') center/cover">
+<div class="category-overlay">Accessories</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="products" class="py-5 bg-light">
+<div class="container">
+<div class="section-title fade-up"><h2>Featured Products</h2></div>
+
+<div class="row g-4">
+<div class="col-md-3 fade-up">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80" class="product-img">
+<div class="card-body text-center">
+<h6>Classic Watch</h6>
+<p class="price">$89</p>
+<button class="btn btn-dark w-100">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 fade-up">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" class="product-img">
+<div class="card-body text-center">
+<h6>Sport Sneakers</h6>
+<p class="price">$149</p>
+<button class="btn btn-dark w-100">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 fade-up">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=600&q=80" class="product-img">
+<div class="card-body text-center">
+<h6>Leather Bag</h6>
+<p class="price">$179</p>
+<button class="btn btn-dark w-100">Add to Cart</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-3 fade-up">
+<div class="card product-card">
+<img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=600&q=80" class="product-img">
+<div class="card-body text-center">
+<h6>Sunglasses</h6>
+<p class="price">$69</p>
+<button class="btn btn-dark w-100">Add to Cart</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sale" class="sale py-5 text-center">
+<div class="sale-content container">
+<h2 class="display-5 fw-bold fade-up">Big Sale 🔥</h2>
+<p class="lead fade-up">Up to 70% Off</p>
+<button class="btn btn-light btn-lg px-5 fade-up">Shop Sale</button>
+</div>
+</section>
+
+<section class="py-5">
+<div class="container">
+<div class="row text-center align-items-center brand g-4">
+<div class="col"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"></div>
+<div class="col"><img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"></div>
+<div class="col"><img src="https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo.png"></div>
+<div class="col"><img src="https://logos-world.net/wp-content/uploads/2020/05/Zara-Logo.png"></div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-5 bg-dark text-white text-center">
+<div class="container fade-up">
+<h3>Subscribe Newsletter</h3>
+<p>Get offers & updates</p>
+<div class="input-group w-50 mx-auto">
+<input type="email" class="form-control" placeholder="Email">
+<button class="btn btn-danger">Subscribe</button>
+</div>
+</div>
+</section>
+
+<footer class="py-4 text-center">
+<p class="mb-0">&copy; 2024 Elegance Shop</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+window.addEventListener("scroll",()=>{
+  document.querySelector(".custom-nav")
+  .classList.toggle("scrolled",window.scrollY>50);
+});
+</script>
+
+</body>
+</html>
